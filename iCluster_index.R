@@ -1,5 +1,5 @@
+#设定可读入外部参数
 args <- commandArgs(TRUE)
-
 total <- read.table(args[1], sep = ",", header = TRUE)
 
 #通过列名匹配，来区分不同组学数据
