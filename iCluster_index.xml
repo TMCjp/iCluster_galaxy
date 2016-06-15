@@ -1,0 +1,25 @@
+<tool name="iCluster_index" id="iCluster_index" version="1.0">
+    <description>Integrative clustering of multiple genomic data types--generate reproducibility index plot</description>
+
+    <command interpreter="python">
+        stderr_wrapper.py /home/ubuntu/bin/Rscript /home/ubuntu/galaxy/tools/My_tools/iCluster_index.R $input1 $input2 $types $maxk $output1 $output_image $output_text
+    </command>
+
+    <inputs>
+        <param format="txt" name="input1" type="data" label="dataset" />
+		    <param format="txt" name="input2" type="data" label="information" />
+        <param name="types" type="text" label="Data type" />
+        <param name="maxk" type="integer" value="5" label="max value for cluster" />
+    </inputs>
+
+    <outputs>
+	      <data format="txt" name="output1" label="cluster" />
+        <data format="png" name="output_image" label="reproducibility index plot" />
+        <data format="txt" name="output_text" label="Prefix" />
+    </outputs>
+
+    <help>
+    <!--which can be "\gaussian\","\binomial\","\poisson\", and "\multinomial\" -->
+    </help>
+    
+</tool>
